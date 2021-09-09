@@ -26,7 +26,7 @@
         <div class="flex flex-1 px-5 items-center justify-center lg:justify-start">
             <div class="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
 
-                <img alt="Personnel Image" class="rounded-full" src="{{ asset('storage/images/' . $person->image) }}">
+                <img alt="Personnel Image" class="rounded-full" src="{{ str_replace('public/', '', asset('storage/images/' . $person->image)) }}">
                 <div
                     class="absolute mb-1 mr-1 flex items-center justify-center bottom-0 right-0 bg-theme-1 rounded-full p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
