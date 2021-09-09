@@ -435,7 +435,7 @@
 
             // Ajax request to upload image.
             $.ajax({
-                url: 'https://surigaodelsur.ph/sursur-atp/api/from/webcam/upload/image',
+                url: '/api/from/webcam/upload/image',
                 method: 'POST',
                 dataType: 'json',
                 processData: false,
