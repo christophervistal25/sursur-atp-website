@@ -89,11 +89,6 @@ class PersonnelController extends Controller
         $person->image = $imageName ?? $person->image;
         $person->account->username = $request->user['username'];
 
-        if(!is_null($request->user['mpin'])) {
-            $person->account->mpin = $request->user['mpin'];
-
-        }
-
         if($request->user['password']) {
             $person->account->password = $request->user['password'];
         }
@@ -153,7 +148,6 @@ class PersonnelController extends Controller
         $this->validate($request, [
             'username'          => ['required', 'unique:users,username', new UniqueUser()],
             'password'          => 'required|min:8|max:20',
-            'mpin'              => 'required|max:4',
             'firstname'         => ['required', 'regex:/^[A-Za-z ]+$/u', new UniqueUser()],
             'middlename'        => ['nullable', 'regex:/^[A-Za-z ]+$/u', new UniqueUser()],
             'lastname'          => ['required', 'regex:/^[A-Za-z ]+$/u', new UniqueUser()],
@@ -198,7 +192,6 @@ class PersonnelController extends Controller
                 'username'  => $request->username,
                 'password'  => bcrypt($request->password),
                 'person_id' => $person->id,
-                'mpin'      => bcrypt($request->mpin)
             ]);
 
             DB::commit();
