@@ -331,41 +331,6 @@
                     </span>
                 </div>
 
-                <div class=" col-span-12 sm:col-span-6">
-                    <label>
-                        MPIN
-                        <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">
-                            *
-                        </span>
-                    </label>
-
-                    <div class="p-1 bg-white">
-                        <input
-                            class="input border p-2 px-2 appearance-none outline-none w-full text-gray-800 {{  $errors->has('mpin') ? 'border-red-500' : '' }}"
-                            placeholder="Enter MPIN" name="mpin" value="{{ old('mpin') }}" maxlength="4"
-                            type="password">
-                    </div>
-                    <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">
-                        {{ $errors->first('mpin') }}
-                    </span>
-                </div>
-
-                <div class=" col-span-12 sm:col-span-6">
-                    <label>
-                        Re-type MPIN
-                        <span class="sm:ml-auto mt-1 sm:mt-0 text-xs text-red-600">
-                            *
-                        </span>
-                    </label>
-
-                    <div class="p-1 bg-white">
-                        <input
-                            class="input border p-2 px-2 appearance-none outline-none w-full text-gray-800 {{  $errors->has('mpin') ? 'border-red-500' : '' }}"
-                            placeholder="Enter MPIN" name="mpin_confirmation" value="{{ old('mpin') }}" maxlength="4"
-                            type="password">
-                    </div>
-                </div>
-
             </div>
 
             <div class="intro-x grid grid-cols-12 gap-4 row-gap-5 mt-5 section hidden" id="other-information">
