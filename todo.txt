@@ -1,0 +1,35 @@
+
+Android App User Features need to add :
+
+    * Step 2 Registration must wait first if the account information already exists.
+    * Submit or Proceed button to submit the OTP code.
+    // Forgot MPIN
+    * Update image in profile section of user
+    * Login using registered account in website
+
+
+Android App Gateway Features need to be add :
+    * Registration of the user include barangay.
+    * Validation of the account in registration.
+    // Look up database first if user already exists.
+
+
+Android App Reader Features need to be add :
+    * Include address in sending data using internet connection.
+    * Include address in sending list of data in local storage.
+    * Re-code the process of 1 to 1 scanned of user then send using internet connection.
+    // Re-code the process of uploading data from local storage to website storage.
+    * Add Dialog for sending information via internet.
+
+
+
+ Website
+    * Add No. of Scanned QR in Dashboard
+    // Chart by location temperature
+    // Person's Temperature Chart -> Add Group By Age or Group By Gender.
+    // Chart of Register User Display Complete and In-complete information.
+
+    // Open a API for covid quick stats.
+    // Display of High temperature Person's Chart & View in Table.
+    // Queue process for notification for all users.
+
