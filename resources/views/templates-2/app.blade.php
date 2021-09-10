@@ -43,26 +43,26 @@
             @auth('admin')
             <ul>
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" class="side-menu side-menu--active">
+                    <a href="{{ route('admin.dashboard', ['pass' => 'dashboard']) }}" class="side-menu {{ Str::contains(request()->pass, 'dashboard') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                         <div class="side-menu__title"> Dashboard </div>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'generate') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="grid"></i> </div>
                         <div class="side-menu__title"> Generate QR <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{ route('personnel.create') }}" class="side-menu">
+                            <a href="{{ route('personnel.create', ['pass' => 'generate']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user"></i> </div>
                                 <div class="side-menu__title"> Personnel </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('establishment.create') }}" class="side-menu">
+                            <a href="{{  route('establishment.create', ['pass' => 'generate']) }}" class="side-menu ">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Establishment </div>
                             </a>
@@ -70,20 +70,20 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'personnel') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                         <div class="side-menu__title"> People <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('personnel.index') }}" class="side-menu">
+                            <a href="{{  route('personnel.index', ['pass' => 'personnel']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('personnel.index', ['menu_edit' => true]) }}" class="side-menu">
+                            <a href="{{  route('personnel.index', ['menu_edit' => true, 'pass' => 'personnel']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="edit-3"></i> </div>
                                 <div class="side-menu__title"> Edit Personnel </div>
                             </a>
@@ -93,26 +93,26 @@
 
 
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'checker') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="shield"></i> </div>
                         <div class="side-menu__title"> Checkers <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('checker.index') }}" class="side-menu">
+                            <a href="{{  route('checker.index', ['pass' => 'checker']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('checker.create') }}" class="side-menu">
+                            <a href="{{  route('checker.create', ['pass' => 'checker']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user-plus"></i> </div>
                                 <div class="side-menu__title"> Add Checker </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('checker.index', ['menu_edit' => true]) }}" class="side-menu">
+                            <a href="{{  route('checker.index', ['menu_edit' => true, 'pass' => 'checker']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="edit-3"></i> </div>
                                 <div class="side-menu__title"> Edit Checker </div>
                             </a>
@@ -121,20 +121,20 @@
                 </li>
 
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'establishments') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                         <div class="side-menu__title"> Establishments <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('establishment.index') }}" class="side-menu">
+                            <a href="{{  route('establishment.index', ['pass' => 'establishments']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('establishment.index', ['menu_edit' => true]) }}" class="side-menu">
+                            <a href="{{  route('establishment.index', ['menu_edit' => true, 'pass' => 'establishments']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="edit-3"></i> </div>
                                 <div class="side-menu__title"> Edit Establishment </div>
                             </a>
@@ -143,26 +143,26 @@
                 </li>
                 <li class="side-nav__devider my-6"></li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'account') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="key"></i> </div>
                         <div class="side-menu__title"> Accounts <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('administrator.index') }}" class="side-menu">
+                            <a href="{{  route('administrator.index', ['pass' => 'account']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user-check"></i> </div>
                                 <div class="side-menu__title"> Administrators </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('user.index') }}" class="side-menu">
+                            <a href="{{  route('user.index', ['pass' => 'account']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user-check"></i> </div>
                                 <div class="side-menu__title"> Users </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('municipal-account.index') }}" class="side-menu">
+                            <a href="{{  route('municipal-account.index', ['pass' => 'account']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                                 <div class="side-menu__title"> Municipals </div>
                             </a>
@@ -172,26 +172,26 @@
 
 
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'province') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="map"></i> </div>
                         <div class="side-menu__title"> Province <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{ route('province.index') }}" class="side-menu">
+                            <a href="{{ route('province.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('city.index') }}" class="side-menu">
+                            <a href="{{  route('city.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Municipalities </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('barangay.index') }}" class="side-menu">
+                            <a href="{{ route('barangay.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Barangay </div>
                             </a>
@@ -201,14 +201,14 @@
 
                 <li class="side-nav__devider my-6"></li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'track') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="map-pin"></i> </div>
                         <div class="side-menu__title"> Track <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('track.index') }}" class="side-menu">
+                            <a href="{{  route('track.index', ['pass' => 'track']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                 <div class="side-menu__title"> Personnel </div>
                             </a>
@@ -216,7 +216,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('request.index') }}" class="side-menu">
+                    <a href="{{ route('request.index', ['pass' => 'request']) }}" class="side-menu {{ Str::contains(request()->pass, 'request') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                         <div class="side-menu__title"> Request <span
                                 class="w-6 bg-theme-6 text-white font-medium text-center rounded-full mx-auto">{{ $requestUpdate->count() }}</span>
@@ -229,26 +229,26 @@
             @auth('municipal')
             <ul>
                 <li>
-                    <a href="{{  route('municipal.dashboard') }}" class="side-menu">
+                    <a href="{{  route('municipal.dashboard', ['pass' => 'dashboard']) }}" class="side-menu {{ Str::contains(request()->pass, 'dashboard') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                         <div class="side-menu__title"> Dashboard </div>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'generate') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="grid"></i> </div>
                         <div class="side-menu__title"> Generate QR <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{ route('municipal-personnel.create') }}" class="side-menu">
+                            <a href="{{ route('municipal-personnel.create', ['pass' => 'generate']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user"></i> </div>
                                 <div class="side-menu__title"> Personnel </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('m-establishment.create') }}" class="side-menu">
+                            <a href="{{  route('m-establishment.create', ['pass' => 'generate']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Establishment </div>
                             </a>
@@ -256,14 +256,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'people') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                         <div class="side-menu__title"> People <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('municipal-personnel.index') }}" class="side-menu">
+                            <a href="{{  route('municipal-personnel.index', ['pass' => 'people']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
@@ -273,26 +273,26 @@
 
 
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'checkers') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="shield"></i> </div>
                         <div class="side-menu__title"> Checkers <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('m-checker.index') }}" class="side-menu">
+                            <a href="{{  route('m-checker.index', ['pass' => 'checkers']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('m-checker.create') }}" class="side-menu">
+                            <a href="{{ route('m-checker.create', ['pass' => 'checkers']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="user-plus"></i> </div>
                                 <div class="side-menu__title"> Add Checker </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('m-checker.index', ['menu_edit' => true]) }}" class="side-menu">
+                            <a href="{{ route('m-checker.index', ['menu_edit' => true, 'pass' => 'checkers']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="edit-3"></i> </div>
                                 <div class="side-menu__title"> Edit Checker </div>
                             </a>
@@ -301,20 +301,20 @@
                 </li>
 
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'establishments') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                         <div class="side-menu__title"> Establishments <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('m-establishment.index') }}" class="side-menu">
+                            <a href="{{  route('m-establishment.index', ['pass' => 'establishments']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="list"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('m-establishment.index', ['menu_edit' => true]) }}" class="side-menu">
+                            <a href="{{  route('m-establishment.index', ['menu_edit' => true, 'pass' => 'establishments']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="edit-3"></i> </div>
                                 <div class="side-menu__title"> Edit Establishment </div>
                             </a>
@@ -323,26 +323,26 @@
                 </li>
                 <li class="side-nav__devider my-6"></li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'province') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="map"></i> </div>
                         <div class="side-menu__title"> Province <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{ route('m-province.index') }}" class="side-menu">
+                            <a href="{{ route('m-province.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> View All </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{  route('m-city.index') }}" class="side-menu">
+                            <a href="{{  route('m-city.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Municipalities </div>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('m-barangay.index') }}" class="side-menu">
+                            <a href="{{ route('m-barangay.index', ['pass' => 'province']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                                 <div class="side-menu__title"> Barangay </div>
                             </a>
@@ -352,14 +352,14 @@
 
                 <li class="side-nav__devider my-6"></li>
                 <li>
-                    <a href="javascript:;" class="side-menu">
+                    <a href="javascript:;" class="side-menu {{ Str::contains(request()->pass, 'track') ? ' side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-feather="map-pin"></i> </div>
                         <div class="side-menu__title"> Track <i data-feather="chevron-down"
                                 class="side-menu__sub-icon"></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="{{  route('people.track.index') }}" class="side-menu">
+                            <a href="{{  route('people.track.index', ['pass' => 'track']) }}" class="side-menu">
                                 <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                 <div class="side-menu__title"> Personnel </div>
                             </a>
